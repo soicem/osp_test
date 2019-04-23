@@ -1,0 +1,16 @@
+OBJS = calculator.o Add.o Minus.o Multi.o Divide.o
+all : calculator
+Add.o: Add.c
+	gcc -c Add.c
+Minus.o: Minus.c
+	gcc -c Minus.c
+Multi.o: Multi.c
+	gcc -c Multi.c
+Divide.o: Divide.c
+	gcc -c Divide.c
+
+calculator.o: calculator.c
+	gcc -c calculator.c
+
+calculator: $(OBJS)
+	gcc -o calculator $(OBJS)
